@@ -1,5 +1,8 @@
 # Projekt aplikacji Quiz
 Kod źródłowy aplikacji Quiz, którą piszemy na ćwiczeniach, aby nauczyć się programować 
+Wasz kod może wyglądać oczywiście inaczej, jeżeli macie swoje własne pomysły.
+To jest mój pomysł na tę aplikację.
+
 #### Po każdych zajęciach będę aktualizował repozytorium.
 
 ### Drugie zajęcia:

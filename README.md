@@ -4,6 +4,7 @@ Wasz kod może wyglądać oczywiście inaczej, jeżeli macie swoje własne pomys
 To jest mój pomysł na tę aplikację.
 
 #### Po każdych zajęciach będę aktualizował repozytorium.
+#### Każdy z Państwa, może sobie przejrzeć kod.
 
 ### Drugie zajęcia:
 1. Dodałem dwie metody w głównej metodzie Main w pliku Program.cs

@@ -19,4 +19,4 @@ To jest mój pomysł na tę aplikację.
 3. Ewaluacja odpowiedzi Użytkownika za pomocą instrukcji warunkowej if ... else if ... else w klasie Program.cs 
 4. Utworzenie klas Pytanie, Odpowiedz, Gra w katalogu Backend
 5. Dodanie doatkowych plików Losowacz.cs oraz pytania.json => tym się nie przejmujcie => to jest na później i tego raczej nie będziemy się uczyć na tym semestrze.
- może sobie wykorzystamy po prostu te pliki lub nie. Zobczymy.
+ może sobie wykorzystamy po prostu te pliki lub nie. Zobaczymy.

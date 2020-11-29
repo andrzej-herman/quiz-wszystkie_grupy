@@ -1,0 +1,398 @@
+﻿[
+  {
+    "Kategoria": 500,
+    "Tresc": "Podaj dokładną datę Bitwy pod Grunwaldem",
+    "Odpowiedzi": [
+      {
+        "Tresc": "15.07.1410 r.",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "15.08.1410 r.",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "25.07.1410 r.",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "10.07.1410 r.",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 500,
+    "Tresc": "Jaka drużyna została mistrzem Polski w piłce nożnej w sezonie 2019/2020?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "Legia Warszawa",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "Piast Gliwice",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Lech Poznań",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Śląsk Wrocław",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 500,
+    "Tresc": "Jak wygląda logo firmy Apple?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "Nadgryzione jabłko",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "Uschnięte jabłko",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Całe jabłko z ogonkiem",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Nadgryziona gruszka",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 500,
+    "Tresc": "W którym roku zakończyła się I wojna światowa?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "1918",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "1920",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "1916",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "1914",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 500,
+    "Tresc": "Jak miał na imię Einstein - genialny fizyk, laureat nagrody Nobla?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "Albert",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "Aaron",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Andrew",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Anthony",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 500,
+    "Tresc": "Która z tych rzek nie wpada do Bałtyku?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "Strwiąż",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "Wisła",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Łeba",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Potynia",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 1000,
+    "Tresc": "Jeden hektar pola to?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "Kwadrat o bokach 100m x 100m",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "Koło o średnicy 1000 m",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Kwadrat o bokach 1000m x 1000m",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Prostokąt o bokach 1000m x 100m",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 1000,
+    "Tresc": "Co oznacza skrót WHO?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "Światowa Organizacja Zdrowia",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "Światowa Organizacja Handlu",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Organizacja Narodów Zjednoczonych",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Międzynarodowy Komitet Olimpijski",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 1000,
+    "Tresc": "Które ze świąt dzieli najmniejsza liczba dni od Andrzejek?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "Boże Narodzenie",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "Wielkanoc",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Zaduszki",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Święto Trzech Króli",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 1000,
+    "Tresc": "Co łączy ze sobą rowerowa szprycha?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "piastę z obręczą",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "obręcz z dętką",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "dętkę z piastą",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "obręcz z widelcem",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 1000,
+    "Tresc": "Trzy z tych czterech nazw odnoszą się do tego samego oceanu. Która go nie dotyczy?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "Atlantyk",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "Ocean Wielki",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Pacyfik",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Ocean Spokojny",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 1000,
+    "Tresc": "Na akord można?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "pracować",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "spać",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "śpiewać",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "podróżować",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 2000,
+    "Tresc": "Kto jest autorem słynnego cytatu 'Dobrze widzi się tylko sercem. Najważniejsze jest niewidoczne dla oczu'?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "Antoine de Saint-Exupéry",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "Michaił Bułhakow",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Wisława Szymborska",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Paulo Coelho",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 2000,
+    "Tresc": "Suspens to chwyt stosowany?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "w filmach",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "w zapasach",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "w grze na gitarze",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "we wspinaczce skałkowej",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 2000,
+    "Tresc": "Ile rodzonych córek miała macocha Kopciuszka w znanej baśni braci Grimm?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "dwie",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "trzy",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "cztery",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "pięć",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 2000,
+    "Tresc": "Lew zabity przez Ramona Mercadera to?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "Trocki",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "Simba",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Mufasa",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Tołstoj",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 2000,
+    "Tresc": "Którzy sportowcy na igrzyskach olimpijakich w Pjongczangu nie mogli wystepować po własną flagą?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "Rosjanie",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "Szwedzi",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Syryjczycy",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "Kanadyjczycy",
+        "CzyPrawidlowa": false
+      }
+    ]
+  },
+  {
+    "Kategoria": 2000,
+    "Tresc": "Miernik poziomu dźwięku, to?",
+    "Odpowiedzi": [
+      {
+        "Tresc": "sonometr",
+        "CzyPrawidlowa": true
+      },
+      {
+        "Tresc": "higrometr",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "barometr",
+        "CzyPrawidlowa": false
+      },
+      {
+        "Tresc": "dozymetr",
+        "CzyPrawidlowa": false
+      }
+    ]
+  }
+]

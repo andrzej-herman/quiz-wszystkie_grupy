@@ -9,6 +9,14 @@ namespace Quiz.Backend
     // klasa reprezentująca Pytanie w quizie
     public class Pytanie
     {
+        // konstruktor klasy
+        // tworzymy na starcie pustę listę z odpowiedziami (żeby nie była nullem)
+        public Pytanie()
+        {
+            Odpowiedzi = new List<Odpowiedz>();
+        }
+
+
         // identyfikator pytania (numer pytania => dodatkowa właściwość identyfikująca pytanie)
         public int Id { get; set; }
 
@@ -22,11 +30,11 @@ namespace Quiz.Backend
         public int Kategoria { get; set; }
 
 
-        // cztery odpowiedzi (wszystkie są klasy Odpowiedz)
-        public Odpowiedz Odpowiedz_1 { get; set; }
-        public Odpowiedz Odpowiedz_2 { get; set; }
-        public Odpowiedz Odpowiedz_3 { get; set; }
-        public Odpowiedz Odpowiedz_4 { get; set; }
+
+        // zastępujemy cztery osobne odpowiedzi obiektem Lista
+        public List<Odpowiedz> Odpowiedzi { get; set; }
+
+
 
     }
 }

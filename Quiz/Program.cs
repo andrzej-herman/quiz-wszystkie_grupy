@@ -15,40 +15,34 @@ namespace Quiz
             // utworzenie instancji klasy Gra
             Gra gra = new Gra();
 
-            // utworzenie egzemplarza klasy Pytanie o nazwie pytanie1 
-            Pytanie pytanie1 = new Pytanie();
-            pytanie1.Id = 1;
-            pytanie1.Kategoria = 500;
-            pytanie1.Tresc = "Jak miał na imię Einstein?";
-            pytanie1.Odpowiedz_1 = new Odpowiedz();
-            pytanie1.Odpowiedz_1.Id = 1;
-            pytanie1.Odpowiedz_1.Tresc = "Albert";
-            pytanie1.Odpowiedz_1.CzyPrawidlowa = true;
-            pytanie1.Odpowiedz_2 = new Odpowiedz();
-            pytanie1.Odpowiedz_2.Id = 2;
-            pytanie1.Odpowiedz_2.Tresc = "Aaron";
-            pytanie1.Odpowiedz_3 = new Odpowiedz();
-            pytanie1.Odpowiedz_3.Id = 3;
-            pytanie1.Odpowiedz_3.Tresc = "Andrew";
-            pytanie1.Odpowiedz_4 = new Odpowiedz();
-            pytanie1.Odpowiedz_4.Id = 4;
-            pytanie1.Odpowiedz_4.Tresc = "Anthony";
+            // Losujemy pytanie => wywołujemy metodę na obiekcie gra (metodę Wylosuj pytanie)
+            // docelowo będzie ona losowała pytanie z bazy pytań
+            // na razie generuje Nam "Einsteina"
+            Pytanie pytanie = gra.WylosujPytanie();
 
 
 
             // wyświetlamy pytanie1 => Czyli wywołujemy naszą metodę WyswietlPytanie przekazując do niej jako argument pytanie1
             // bo ten egzemplarz chcemy wyświetlić
-            WyswietlPytanie(pytanie1);
+            WyswietlPytanie(pytanie);
 
 
             // sprawdzamy co wpisał Użytkownik i zapisujemy to co wpisał w zmiennej o nazwie  odpowiedzUzytkownika (typu string)
             string odpowiedzUzytkownika = Console.ReadLine();
 
 
+
+            // zmiana po wprowadzeniu losowosci odpowiedzi
+            int numerPrawidlowejOdpowiedzi = pytanie.Odpowiedzi.First(x => x.CzyPrawidlowa).Kolejnosc;
+
+
+
             // ewaulujemy odpowiedź Użytkownika
             // innymi słowy => rozpatrujemy co mamy zrobić dalej po udzieleniu odpowiedzi przez Użytkownika
             // w zależności od tego czy jego odpowiedź jest prawidłowa czy nie
-            if (odpowiedzUzytkownika == "1")
+            //if (odpowiedzUzytkownika == "1")
+            // zmiana
+            if (odpowiedzUzytkownika == $"{numerPrawidlowejOdpowiedzi}")
             {
                 // kod się wykona, jeżeli Użytkownik wpisał "1" => w naszym przypadku to prawidłowa odpowiedź
                 // ponieważ ustawiliśmy Odpowiedz_1 jako prawidłową
@@ -71,7 +65,7 @@ namespace Quiz
                 // dajemy mu szansę ponownie.
                 // Wyświtlamy zatem komunikat i jeszcze raz wyświetlamy pytanie oraz czakamy na odpowiedź
                 WP("Wcisnąłeś nieprawidłowy przycisk. Spróbuj jeszcze raz");
-                WyswietlPytanie(pytanie1);
+                WyswietlPytanie(pytanie);
                 odpowiedzUzytkownika = Console.ReadLine();
             }
 
@@ -88,10 +82,33 @@ namespace Quiz
         {
             WP($"Pytanie za {pytanie.Kategoria} PLN");
             WP(pytanie.Tresc);
-            WP($"{pytanie.Odpowiedz_1.Id}. {pytanie.Odpowiedz_1.Tresc}");
-            W($"{pytanie.Odpowiedz_2.Id}. {pytanie.Odpowiedz_2.Tresc}");
-            W($"{pytanie.Odpowiedz_3.Id}. {pytanie.Odpowiedz_3.Tresc}");
-            W($"{pytanie.Odpowiedz_4.Id}. {pytanie.Odpowiedz_4.Tresc}");
+
+            // odpowiedzi wyświetlamy za pomocą pętli
+            // dlatego też musieliśmy zamienić cztery osobne Odpowiedzi z klasy pytanie
+            // na jedną listę z odpowiedziami
+
+
+            // wersja z pętlą for
+            // jako indeks elementu listy wstawiamy licznik pętli => i
+            Console.WriteLine();
+            for (int i = 0; i < pytanie.Odpowiedzi.Count; i++)
+            {
+                W($"{pytanie.Odpowiedzi[i].Id}. {pytanie.Odpowiedzi[i].Tresc}");
+            }
+
+            Console.WriteLine("Wersja z pętlą foreach");
+
+            // wersja z pętlą foreach
+            // pętlą specjalnie dedykowana dla list
+            // dużo łatwiejsza w zastosowaniu w przypadku list
+            // nie ma w niej licznika i indeksów elementów
+            // po prostu pętla wykonuje się tyle razy ile jest elementów w liście
+
+            foreach (Odpowiedz odpowiedz in pytanie.Odpowiedzi)
+            {
+                W($"{odpowiedz.Kolejnosc}. {odpowiedz.Tresc}");
+            }
+
             WP("Proszę wcisnąć 1, 2, 3 lub 4");
         }
 

@@ -20,3 +20,13 @@ To jest mój pomysł na tę aplikację.
 4. Utworzenie klas Pytanie, Odpowiedz, Gra w katalogu Backend
 5. Dodanie doatkowych plików Losowacz.cs oraz pytania.json => tym się nie przejmujcie => to jest na później i tego raczej nie będziemy się uczyć na tym semestrze.
  może sobie wykorzystamy po prostu te pliki lub nie. Zobaczymy.
+ 
+ ### Czwarte zajęcia:
+1. Dodanie konstruktorów do klas Gra oraz Pytanie.
+2. Utworzenie - na samym początku gry nowego (i w naszym przypadku) jedynego egzempalarza klasy Gra.
+3. Nadanie jej (za pomocą konstruktora) wartości początkowych oraz utworzenie bazy pytań gry
+4. Utworzenie metody WylosujPytanie w klasie Gra. Będzie ona docelowo losowała pytanie z naszej Bazy Pytań. Póki co generuje pytanie o "Einsteina".
+5. Zastosowanie pętli for w metodzie WylosujPytanie => dzięki której, dodajemy 4 odpowiedzi do tworzonego pytania
+6. Zastosowanie pętl for oraz foreach w metodzie WyswietlPytanie w pliku Program.cs
+7. Utworzenie w klasie gra właściwości o nazwie BazaPytań klasy List<Pytanie>
+8. Utworzenie metody UtworzBazePytan => tworzącej nam całą kolekcję pytań do gry z pliku pytania.json 

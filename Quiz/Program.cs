@@ -40,34 +40,20 @@ namespace Quiz
             // ewaulujemy odpowiedź Użytkownika
             // innymi słowy => rozpatrujemy co mamy zrobić dalej po udzieleniu odpowiedzi przez Użytkownika
             // w zależności od tego czy jego odpowiedź jest prawidłowa czy nie
-            //if (odpowiedzUzytkownika == "1")
-            // zmiana
             if (odpowiedzUzytkownika == $"{numerPrawidlowejOdpowiedzi}")
             {
-                // kod się wykona, jeżeli Użytkownik wpisał "1" => w naszym przypadku to prawidłowa odpowiedź
-                // ponieważ ustawiliśmy Odpowiedz_1 jako prawidłową
                 Console.ForegroundColor = ConsoleColor.Green;
                 WP("Brawo, to prawidłowa ospowiedź !!!");
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            else if (odpowiedzUzytkownika == "2" || odpowiedzUzytkownika == "3" || odpowiedzUzytkownika == "4")
+            else 
             {
-                // kod się wykona, jeżeli Użytkownik wpisał "2" lub "3" lub "4" 
                 // oznacza to że wybrał inną odpowiedź niż "1" => czyli wybrał odpowiedź nieprawidłową
                 Console.ForegroundColor = ConsoleColor.Red;
                 WP("Niestety, przegrałeś, to nie jest dobra odpowiedź.");
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            else
-            {
-                // kod się wykona, jeżeli Użytkownik wpisał cokolwiek innego niż "1" i "2" i "3" i "4" 
-                // oznacza to że nie postąpił zgodnie z instrukcją. Być może wybrał inny klawisz przez pomyłkę
-                // dajemy mu szansę ponownie.
-                // Wyświtlamy zatem komunikat i jeszcze raz wyświetlamy pytanie oraz czakamy na odpowiedź
-                WP("Wcisnąłeś nieprawidłowy przycisk. Spróbuj jeszcze raz");
-                WyswietlPytanie(pytanie);
-                odpowiedzUzytkownika = Console.ReadLine();
-            }
+
 
 
             // żeby nam się okienko nie zamykało
@@ -91,12 +77,12 @@ namespace Quiz
             // wersja z pętlą for
             // jako indeks elementu listy wstawiamy licznik pętli => i
             Console.WriteLine();
-            for (int i = 0; i < pytanie.Odpowiedzi.Count; i++)
-            {
-                W($"{pytanie.Odpowiedzi[i].Id}. {pytanie.Odpowiedzi[i].Tresc}");
-            }
+            //for (int i = 0; i < pytanie.Odpowiedzi.Count; i++)
+            //{
+            //    W($"{pytanie.Odpowiedzi[i].Id}. {pytanie.Odpowiedzi[i].Tresc}");
+            //}
 
-            Console.WriteLine("Wersja z pętlą foreach");
+            //Console.WriteLine("Wersja z pętlą foreach");
 
             // wersja z pętlą foreach
             // pętlą specjalnie dedykowana dla list

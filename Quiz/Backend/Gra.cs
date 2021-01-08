@@ -62,43 +62,29 @@ namespace Quiz.Backend
         // Na zajęciach nr 5 już naprawdę wylosujemy pytanie z naszej przygotowanie Bazy pytań (z listy List<Pytanie>)
         public Pytanie WylosujPytanie()
         {
-            Pytanie pytanie = new Pytanie
-            {
-                Id = 1,
-                Kategoria = 500,
-                Tresc = "Jak miał na imię Einstein?"
-            };
+            // wybieramy z całej bazy pytań te, których kategoria jest równa aktualnej kategorii pytania
+            List<Pytanie> pytaniaZa500PLN = BazaPytan.Where(x => x.Kategoria == AktualnaKategoria).ToList();
 
-            // za pomocą pętli for wywołanej 4 razy generujemy wszystkie 4 odpowiedzi naszego pytania
+            // losujemy liczbę 
+            int wylosowanaLiczba = Losowacz.WygenerujLiczbeLosowa(pytaniaZa500PLN.Count);
+
+            // wybieramy wylosowane pytanie z listy pytań aktualnej kategorii
+            Pytanie pytanie = pytaniaZa500PLN[wylosowanaLiczba - 1];
+
+            // losujemy liczby z przedziału 1-4
+            List<int> liczby = Losowacz.WygenerujListeLiczbLosowych(4, 4);
+
+            // nadajmy wartości właściwści Kolejność
+            List<Odpowiedz> odpowiedziWLosowejKolejnosci = pytanie.Odpowiedzi;
             for (int i = 0; i < 4; i++)
             {
-                // za każdym "obrotem" naszej pętli tworzymy zupełnie nowy egzemplarz klasy Odpowiedz
-                Odpowiedz odpowiedz = new Odpowiedz
-                {
-                    // mumer odpowiedzi => chcemy żeby był z zakresu 1-4
-                    // tak więc możemy wykorzystać licznik pętli i
-                    // ponieważ on na starcie jest równy 0 to musimy go "podnieść" o 1
-                    // dzieki temu (z każdym "obrotem" pętli uzyskamy inny numer => od 1 do 4)
-                    Id = i + 1
-                };
-
-                // żeby każda odpowiedz miała inną treść musimy uzależnić ją od licznika pętli
-                if (i == 0)
-                {
-                    odpowiedz.Tresc = "Albert";
-                    // przyjeliśmy sobie założenie, że (narazie) zawsze pierwsza odpowiedź jest prawidłowa
-                    // a ta jes pierwsza, ponieważ jest to pierwszy "obrót" pętli => licznik równa się 0
-                    odpowiedz.CzyPrawidlowa = true;
-                }
-                else if (i == 1) odpowiedz.Tresc = "Aaron";
-                else if (i == 2) odpowiedz.Tresc = "Andrew";
-                else odpowiedz.Tresc = "Anthony";
-
-                // przy każdym obrocie pętli musimy dodać utworzoną odpowiedź do listy odpowiedzi pytania
-                // wykorzystujemy jedną z metod klasy List o nazwie Add
-                // dodaje ona element do listy
-                pytanie.Odpowiedzi.Add(odpowiedz);
+                odpowiedziWLosowejKolejnosci[i].Kolejnosc = liczby[i];
             }
+
+
+            // ustawiamy odpowiedzi pytania w wylosowanej (losowej kolejności) => wg właściwości Kolejność w porządku osnącym (od 1 do 4)
+            pytanie.Odpowiedzi = odpowiedziWLosowejKolejnosci.OrderBy(x => x.Kolejnosc).ToList();
+
 
 
             // na końcu zwracamy nasze całe utworzone pytanie

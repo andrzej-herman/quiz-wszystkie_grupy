@@ -37,3 +37,8 @@ To jest mój pomysł na tę aplikację.
 3. Losowanie pytania z listy pytań z okreslonej kategorii.
 4. Losowanie kolejności odpowiedzi.
 5. Dostosowanie logiki wyboru prawidłowej odpowiedzi przez Użytkownika.
+
+ ### Szóste zajęcia:
+1. Zakończenie programu.
+2. Pętla while
+3. Kategorie pytań

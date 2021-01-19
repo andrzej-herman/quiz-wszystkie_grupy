@@ -15,49 +15,78 @@ namespace Quiz
             // utworzenie instancji klasy Gra
             Gra gra = new Gra();
 
-            // Losujemy pytanie => wywołujemy metodę na obiekcie gra (metodę Wylosuj pytanie)
-            // docelowo będzie ona losowała pytanie z bazy pytań
-            // na razie generuje Nam "Einsteina"
-            Pytanie pytanie = gra.WylosujPytanie();
+            // zmienna, która jest warunkiem "trwania pętli for"
+            // musimy ją początkowo ustawić na true, aby pętla wykonała się przynajmniej raz
+            // musimy przecież wyświetlić chociaż pierwsze pytanie
+            bool uzytkownikOdpowiadaPrawidlowo = true;
 
 
-
-            // wyświetlamy pytanie1 => Czyli wywołujemy naszą metodę WyswietlPytanie przekazując do niej jako argument pytanie1
-            // bo ten egzemplarz chcemy wyświetlić
-            WyswietlPytanie(pytanie);
-
-
-            // sprawdzamy co wpisał Użytkownik i zapisujemy to co wpisał w zmiennej o nazwie  odpowiedzUzytkownika (typu string)
-            string odpowiedzUzytkownika = Console.ReadLine();
-
-
-
-            // zmiana po wprowadzeniu losowosci odpowiedzi
-            int numerPrawidlowejOdpowiedzi = pytanie.Odpowiedzi.First(x => x.CzyPrawidlowa).Kolejnosc;
-
-
-
-            // ewaulujemy odpowiedź Użytkownika
-            // innymi słowy => rozpatrujemy co mamy zrobić dalej po udzieleniu odpowiedzi przez Użytkownika
-            // w zależności od tego czy jego odpowiedź jest prawidłowa czy nie
-            if (odpowiedzUzytkownika == $"{numerPrawidlowejOdpowiedzi}")
+            while (uzytkownikOdpowiadaPrawidlowo)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                WP("Brawo, to prawidłowa ospowiedź !!!");
-                Console.ForegroundColor = ConsoleColor.White;
-            }
-            else 
-            {
-                // oznacza to że wybrał inną odpowiedź niż "1" => czyli wybrał odpowiedź nieprawidłową
-                Console.ForegroundColor = ConsoleColor.Red;
-                WP("Niestety, przegrałeś, to nie jest dobra odpowiedź.");
-                Console.ForegroundColor = ConsoleColor.White;
-            }
+                // Losujemy pytanie => wywołujemy metodę na obiekcie gra (metodę Wylosuj pytanie)
+                // docelowo będzie ona losowała pytanie z bazy pytań
+                // na razie generuje Nam "Einsteina"
+                Pytanie pytanie = gra.WylosujPytanie();
+
+                // wyświetlamy pytanie1 => Czyli wywołujemy naszą metodę WyswietlPytanie przekazując do niej jako argument pytanie1
+                // bo ten egzemplarz chcemy wyświetlić
+                WyswietlPytanie(pytanie);
 
 
+                // sprawdzamy co wpisał Użytkownik i zapisujemy to co wpisał w zmiennej o nazwie  odpowiedzUzytkownika (typu string)
+                string odpowiedzUzytkownika = Console.ReadLine();
+
+
+                // zamieniamy odpowiedzUzytkownika na zmienną typu int
+                int odpowiedzUzytkownikaJakoLiczba = int.Parse(odpowiedzUzytkownika);
+
+                // sprawdzamy czy istnieje na liście odpowiedzi pytania które jednocześnie jest prawidłowe i jego kolejność
+                // jest równa numerowi który podał Użytkownik
+                Odpowiedz odpowiedz = pytanie.Odpowiedzi.FirstOrDefault(x => x.CzyPrawidlowa && x.Kolejnosc == odpowiedzUzytkownikaJakoLiczba);
+
+
+                // ewaulujemy odpowiedź Użytkownika
+                // innymi słowy => rozpatrujemy co mamy zrobić dalej po udzieleniu odpowiedzi przez Użytkownika
+                // w zależności od tego czy jego odpowiedź jest prawidłowa czy nie
+                // jeżeli zmienna "odpowiedz" jest różna od null wówczas odpowiedź jest prawidłowa
+                if (odpowiedz != null)
+                {
+                    // odpowiedź prawidłowa
+                    // najpierw musimy sprawdzić czy nie było to ostatnie pytanie
+                    if (gra.AktualnaKategoria == 2000)
+                    {
+                        Console.WriteLine();
+                        Console.Clear();
+                        WP("Brawo, to prawidłowa ospowiedź !!!");
+                        WP($"Wygrałeś/aś {gra.AktualnaKategoria} PLN");
+                        WP("To było ostatnie pytanie. Jesteś Mistrzem !!!");
+                        // komenda break powoduje bezwarunkowe wyjście z pętli
+                        break;
+                    }
+
+                    // po udzieleniu poprawnej odpowiedzi uaktualniamy wartości zmiennych AktualnaWygrana oraz AktualnaKategoria
+                    gra.UaktualnijDaneGry();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Clear();
+                    WP("Brawo, to prawidłowa ospowiedź !!!");
+                    WP($"Wygrałeś/aś {gra.AktualnaWygrana} PLN");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else
+                {
+                    // odpowiedź nieprawidłowa
+                    // musimy przerwać działanie pętli while, więc trzeba zmienić warunek jej wykonania na false
+                    uzytkownikOdpowiadaPrawidlowo = false;
+                    // Informujamy o przegranej
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    WP("Niestety, przegrałeś, to nie jest dobra odpowiedź. To koniec gry");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+            }
 
             // żeby nam się okienko nie zamykało
             Console.ReadLine();
+
         }
 
 
@@ -69,11 +98,6 @@ namespace Quiz
             WP($"Pytanie za {pytanie.Kategoria} PLN");
             WP(pytanie.Tresc);
 
-            // odpowiedzi wyświetlamy za pomocą pętli
-            // dlatego też musieliśmy zamienić cztery osobne Odpowiedzi z klasy pytanie
-            // na jedną listę z odpowiedziami
-
-
             // wersja z pętlą for
             // jako indeks elementu listy wstawiamy licznik pętli => i
             Console.WriteLine();
@@ -82,7 +106,7 @@ namespace Quiz
             //    W($"{pytanie.Odpowiedzi[i].Id}. {pytanie.Odpowiedzi[i].Tresc}");
             //}
 
-            //Console.WriteLine("Wersja z pętlą foreach");
+
 
             // wersja z pętlą foreach
             // pętlą specjalnie dedykowana dla list

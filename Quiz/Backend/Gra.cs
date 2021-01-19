@@ -24,6 +24,7 @@ namespace Quiz.Backend
             AktualnaWygrana = 0; // => to nie jest potrzebne, ponieważ i tak początkowa wartość int wynosi 0
             AktualnaKategoria = 500;
             UtworzBazePytan();
+            UtworzKategoriePytan();
         }
         
         // włąściwość określająca jaka jest aktualna wygrana gracza
@@ -39,13 +40,37 @@ namespace Quiz.Backend
         public List<Pytanie> BazaPytan { get; set; }
 
 
+        // lista wszystkich kategorii pytań
+        public List<int> Kategorie { get; set; }
+
+        // właściwość oznaczająca indeks aktualnej kategorii
+        public int IndeksKategorii { get; set; }
+
+
+        // metoda tworząca kategorie pytań
+        private void UtworzKategoriePytan()
+        {
+            Kategorie = new List<int>() { 500, 1000, 2000 };
+        }
+
+
+        // metoda uaktualniająca wartości AktualnaWygrana oraz AktualnaKategoria
+        public void UaktualnijDaneGry()
+        {
+            // po prawidłowej odpowiedzi gracz wygrywa tyle ile wynosi kategoria pytania na które odpowiedział
+            AktualnaWygrana = AktualnaKategoria;
+            // podnosimy o 1 indeks kategorii
+            IndeksKategorii++;
+            // Aktualna Kategoria jest następną kategorią z listy kategorii
+            AktualnaKategoria = Kategorie[IndeksKategorii];
+        }
 
         // metoda która utworzy nam całą bazę dostepnych Pytań na samym początku gry
         // korzystamy w niej z biblioteki Newtonsoft.Json
         // a dokładniej z zawartej w jednej z jej statycznych klas o nazwie JsonConvert, metody o nazwie DeserializeObject
         // potrafi ona przekształcić format json na strukturę obiektów
         // czyli w naszym przypadku na Listę pytań
-        void UtworzBazePytan()
+        private void UtworzBazePytan()
         {
             // ustalamy ścieżkę do pliku pytania.json
             string sciezkaDoPlikuZPytaniami = $"{Directory.GetCurrentDirectory()}\\pytania.json";

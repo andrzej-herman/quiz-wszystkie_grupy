@@ -30,3 +30,10 @@ To jest mój pomysł na tę aplikację.
 6. Zastosowanie pętl for oraz foreach w metodzie WyswietlPytanie w pliku Program.cs
 7. Utworzenie w klasie gra właściwości o nazwie BazaPytań klasy List<Pytanie>
 8. Utworzenie metody UtworzBazePytan => tworzącej nam całą kolekcję pytań do gry z pliku pytania.json 
+
+ ### Piąte zajęcia:
+1. Losowanie liczby.
+2. Filtrowanie bazy pytań według kategorii.
+3. Losowanie pytania z listy pytań z okreslonej kategorii.
+4. Losowanie kolejności odpowiedzi.
+5. Dostosowanie logiki wyboru prawidłowej odpowiedzi przez Użytkownika.
